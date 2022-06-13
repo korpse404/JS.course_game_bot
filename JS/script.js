@@ -1,7 +1,5 @@
 'use strict'
 let userNumber;
-let guess;
-let generatedNumber = Math.floor(Math.random() * (1 - 100) + 100);
 
 const isNum = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
@@ -12,6 +10,7 @@ const guessNumber = function () {
 
     if (isNum(userNumber)) {
         let questions;
+        let generatedNumber = Math.floor(Math.random() * 100 + 1);
 
         const getQuestions = function () {           
             if (userNumber > generatedNumber) {
@@ -25,6 +24,9 @@ const guessNumber = function () {
             }
         }
         return questions = getQuestions();
+    } else if (userNumber === null) {
+        alert("Игра окончена");
+        return;
     } else {
         alert("Введи число!");
         return guessNumber();
@@ -32,4 +34,4 @@ const guessNumber = function () {
     
 }
 
-guessNumber()
+guessNumber();
