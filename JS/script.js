@@ -13,18 +13,21 @@ function guessNumber () {
         if (userNumber === null) {
             alert("Игра окончена");
             return;
-        } else if (!isNum(userNumber)) {
+        } 
+        if (!isNum(userNumber)) {
             alert("Введи число!");
             return questions();
-        } else if (userNumber > generatedNumber) {
+        }
+        if (userNumber > generatedNumber) {
             alert("Загаданное число меньше")
             return questions();
-        } else if (userNumber < generatedNumber) {
+        }
+        if (userNumber < generatedNumber) {
             alert("Загаданное число больше")
             return questions();
-        } else {
-            return alert("Вы угадали!");
-        }
+        } 
+        return alert("Вы угадали!");
+        
         
     }
     questions();
